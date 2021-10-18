@@ -9,6 +9,7 @@ import {
   updateDoc,
   doc,
 } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 const postsCollectionRef = collection(db, "posts");
 
@@ -47,42 +48,65 @@ export const loadPosts = () => {
 
 export const addPost = (post) => {
   return (dispatch) => {
-    addDoc(postsCollectionRef, post);
-    dispatch(postAdd(post));
+    try {
+      addDoc(postsCollectionRef, post);
+      dispatch(postAdd(post));
+      toast.success("Post added successfully", { theme: "colored" });
+    } catch {
+      toast.error("Something went wrong", { theme: "colored" });
+    }
   };
 };
 export const editPost = (post, id) => {
   return async (dispatch) => {
-    const postDoc = doc(postsCollectionRef, id);
-    const newData = post;
-    await updateDoc(postDoc, newData);
-    dispatch(postEdit());
+    try {
+      const postDoc = doc(postsCollectionRef, id);
+      const newData = post;
+      await updateDoc(postDoc, newData);
+      dispatch(postEdit());
+      toast.success("Post updated successfully", { theme: "colored" });
+    } catch {
+      toast.error("Something went wrong", { theme: "colored" });
+    }
   };
 };
 
 export const deletePost = (id) => {
   return async (dispatch) => {
-    const postDoc = doc(postsCollectionRef, id);
-    await deleteDoc(postDoc);
-    dispatch(postDelete());
-    dispatch(loadPosts());
+    try {
+      const postDoc = doc(id);
+      await deleteDoc(postDoc);
+      dispatch(postDelete());
+      dispatch(loadPosts());
+      toast.success("Post deleted successfully", { theme: "colored" });
+    } catch {
+      toast.error("Something went wrong", { theme: "colored" });
+    }
   };
 };
 
 export const getSinglePost = (id) => {
   return async (dispatch) => {
-    const docRef = doc(postsCollectionRef, id);
-    const docSnap = await getDoc(docRef);
-    dispatch(getPost(docSnap.data()));
+    try {
+      const docRef = doc(postsCollectionRef, id);
+      const docSnap = await getDoc(docRef);
+      dispatch(getPost(docSnap.data()));
+    } catch {
+      toast.error("Something went wrong", { theme: "colored" });
+    }
   };
 };
 
 export const likePost = (post, id) => {
   return async (dispatch) => {
-    const postDoc = doc(postsCollectionRef, id);
-    const newData = post;
-    await updateDoc(postDoc, newData);
-    dispatch(postLike());
-    dispatch(loadPosts());
+    try {
+      const postDoc = doc(postsCollectionRef, id);
+      const newData = post;
+      await updateDoc(postDoc, newData);
+      dispatch(postLike());
+      dispatch(loadPosts());
+    } catch {
+      toast.error("Something went wrong", { theme: "colored" });
+    }
   };
 };

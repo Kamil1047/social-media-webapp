@@ -41,7 +41,7 @@ const Updatepostform = () => {
     }
     dispatch(editPost(post, id));
     history.push("/");
-    toast.success("Post updated successfully", { theme: "colored" });
+
     clearData();
   };
 

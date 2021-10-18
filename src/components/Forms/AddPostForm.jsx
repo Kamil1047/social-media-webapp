@@ -27,10 +27,8 @@ const Addpostform = () => {
     if (!post.title || !post.message) {
       return toast.error("Please fill all fields", { theme: "colored" });
     }
-
     dispatch(addPost(post));
     history.push("/");
-    toast.success("Post added successfully", { theme: "colored" });
     clearData();
   };
 
