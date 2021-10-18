@@ -25,12 +25,12 @@ const Addpostform = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!post.title || !post.message) {
-      return toast.error("Please fill all fields");
+      return toast.error("Please fill all fields", { theme: "colored" });
     }
 
     dispatch(addPost(post));
     history.push("/");
-    toast.success("Post added successfully");
+    toast.success("Post added successfully", { theme: "colored" });
     clearData();
   };
 

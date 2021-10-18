@@ -37,11 +37,11 @@ const Updatepostform = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!post.title || !post.message) {
-      return toast.error("Please fill all fields");
+      return toast.error("Please fill all fields", { theme: "colored" });
     }
     dispatch(editPost(post, id));
     history.push("/");
-    toast.success("Post updated successfully");
+    toast.success("Post updated successfully", { theme: "colored" });
     clearData();
   };
 
