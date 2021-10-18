@@ -8,9 +8,8 @@ import NoPostsFound from "./NoPostsFound";
 
 const Posts = () => {
   const dispatch = useDispatch();
-  const posts = useSelector((state) => state.data.posts.reverse());
-  const state = useSelector((state) => state.data);
-  const { loading } = state;
+  const posts = useSelector((state) => state.data.posts);
+  const { loading } = useSelector((state) => state.data);
 
   useEffect(() => {
     dispatch(loadPosts());
