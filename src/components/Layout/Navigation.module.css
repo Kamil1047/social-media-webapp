@@ -16,10 +16,10 @@ AppBar {
 .navbar a {
   color: white;
   text-decoration: none;
+  padding: 7px;
 }
 
 .navbar a:hover {
   color: #95bcf0;
-  padding-bottom: 0.25rem;
-  border-bottom: 4px solid #95bcf0;
+  border-top: 3px solid #95bcf0;
 }

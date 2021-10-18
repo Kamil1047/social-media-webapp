@@ -7,6 +7,12 @@ import { addPost } from "../../redux/Actions/actions";
 import classes from "./styles.module.css";
 import { toast } from "react-toastify";
 
+/******************* 
+@Purpose : It is used to add post data
+@Parameter : {}
+@Author : INIC
+******************/
+
 const initialState = {
   title: "",
   message: "",
@@ -27,6 +33,7 @@ const Addpostform = () => {
     if (!post.title || !post.message) {
       return toast.error("Please fill all fields", { theme: "colored" });
     }
+
     dispatch(addPost(post));
     history.push("/");
     clearData();

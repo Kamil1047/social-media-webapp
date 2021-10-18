@@ -6,12 +6,12 @@
 .spinner:after {
   content: " ";
   display: block;
-  width: 64px;
-  height: 64px;
-  margin-left: 700px;
+  width: 70px;
+  height: 70px;
+  margin-left: 900px;
   margin-top: 400px;
   border-radius: 50%;
-  border: 6px solid #51065e;
+  border: 10px solid #51065e;
   border-color: #51065e transparent #51065e transparent;
   animation: spinner 1.2s linear infinite;
 }

@@ -15,8 +15,13 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import { useHistory, Link } from "react-router-dom";
 import { deletePost, likePost } from "../../../redux/Actions/actions";
-
 import classes from "./Post.module.css";
+
+/******************* 
+@Purpose : It is used to display all post data
+@Parameter : {props}
+@Author : INIC
+******************/
 
 const Post = (props) => {
   const imageId = Math.floor(Math.random() * 10) + 1;

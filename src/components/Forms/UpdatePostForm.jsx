@@ -7,6 +7,12 @@ import classes from "./styles.module.css";
 import { getSinglePost, editPost } from "../../redux/Actions/actions";
 import { toast } from "react-toastify";
 
+/******************* 
+@Purpose : It is used to update post data
+@Parameter : {}
+@Author : INIC
+******************/
+
 const initialState = {
   title: "",
   message: "",
@@ -41,7 +47,6 @@ const Updatepostform = () => {
     }
     dispatch(editPost(post, id));
     history.push("/");
-
     clearData();
   };
 

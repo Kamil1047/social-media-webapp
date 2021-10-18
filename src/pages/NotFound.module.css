@@ -1,0 +1,12 @@
+.div_container {
+  margin: 10rem auot;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content {
+  margin-top: 200px;
+  font-size: 35px;
+  color: #51065e;
+}

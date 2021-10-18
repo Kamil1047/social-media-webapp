@@ -74,7 +74,7 @@ export const editPost = (post, id) => {
 export const deletePost = (id) => {
   return async (dispatch) => {
     try {
-      const postDoc = doc(id);
+      const postDoc = doc(postsCollectionRef, id);
       await deleteDoc(postDoc);
       dispatch(postDelete());
       dispatch(loadPosts());

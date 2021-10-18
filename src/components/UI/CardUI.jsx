@@ -1,6 +1,12 @@
 import { Container, Grid } from "@mui/material";
 import classes from "./CardUI.module.css";
 
+/******************* 
+@Purpose : It will a used to display card data
+@Parameter : {}
+@Author : INIC
+******************/
+
 const CardUI = (props) => {
   return (
     <Container>

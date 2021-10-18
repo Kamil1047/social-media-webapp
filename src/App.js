@@ -1,11 +1,7 @@
 import { Redirect, Route, Switch } from "react-router";
 import { lazy, Suspense } from "react";
-// import Postdetail from "./components/Posts/Post/PostDetail";
 import Home from "./pages/Home";
-// import Addpost from "./pages/AddPost";
-// import UpdatePost from "./pages/UpdatePost";
 import Layout from "./components/Layout/Layout";
-// import NotFound from "./pages/NotFound";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
