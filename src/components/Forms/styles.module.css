@@ -1,0 +1,17 @@
+.post_form {
+  width: 500px;
+}
+.form_textfield {
+  margin: 5px 0px !important;
+}
+.button_submit {
+  margin: 20px 0px !important;
+  background-color: #51065e !important;
+}
+.button_clear {
+  background-color: #51065e !important;
+}
+.form_card {
+  margin-top: 200px;
+  text-align: center;
+}

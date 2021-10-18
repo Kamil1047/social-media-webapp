@@ -1,0 +1,25 @@
+AppBar {
+  position: sticky !important;
+  position: "-webkit-sticky";
+  top: 0;
+}
+.navbar {
+  background-color: #51065e !important;
+}
+.links {
+  text-decoration: none;
+  color: white;
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: #95bcf0;
+  padding-bottom: 0.25rem;
+  border-bottom: 4px solid #95bcf0;
+}
