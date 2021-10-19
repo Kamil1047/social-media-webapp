@@ -6,6 +6,7 @@ import postImg from "../../assets/images/postImg.gif";
 import { addPost } from "../../redux/Actions/actions";
 import classes from "./styles.module.css";
 import { toast } from "react-toastify";
+import LoadingSpinner from "../UI/LoadingSpinner";
 
 /******************* 
 @Purpose : It is used to add post data
@@ -19,6 +20,7 @@ const initialState = {
   like: false,
   createdAt: new Date(),
 };
+
 const Addpostform = () => {
   const [post, setPost] = useState(initialState);
   const history = useHistory();
@@ -47,7 +49,11 @@ const Addpostform = () => {
       <div className={classes.form_card}>
         <Grid container direction="row" justify="flex-between" item xs={12}>
           <Grid item sm={6}>
-            <img src={postImg} alt="post figure" height="300px" />
+            {!postImg ? (
+              <LoadingSpinner />
+            ) : (
+              <img src={postImg} alt="post figure" height="300px" />
+            )}
           </Grid>
           <Grid item sm={6}>
             <form

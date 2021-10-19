@@ -41,7 +41,7 @@ const Postdetail = () => {
             <p className={classes.post_time}>
               Posted At:
               {post.createdAt &&
-                new Date(post.createdAt.seconds * 1000).toLocaleString()}
+                new Date(post.createdAt.seconds * 1000).toLocaleString("en-US")}
             </p>
           </CardContent>
         </Card>
