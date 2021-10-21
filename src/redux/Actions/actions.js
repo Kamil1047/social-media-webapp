@@ -1,5 +1,5 @@
 import * as types from "./actionType";
-import db from "../../firebase";
+import db from "../../utils/firebase";
 import {
   collection,
   addDoc,

@@ -1,30 +1,20 @@
-import { Redirect, Route, Switch } from "react-router";
-import { lazy, Suspense } from "react";
-import Home from "./pages/Home";
+import { Route, Switch } from "react-router";
+import { Suspense } from "react";
 import Layout from "./components/Layout/Layout";
 import LoadingSpinner from "./components/UI/LoadingSpinner";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Routes from "./components/routes";
 
-const Addpost = lazy(() => import("./pages/AddPost"));
-const Postdetail = lazy(() => import("./components/Posts/Post/PostDetail"));
-const UpdatePost = lazy(() => import("./pages/UpdatePost"));
-const NotFound = lazy(() => import("./pages/NotFound"));
 const App = () => {
+  const routes = Routes.map(({ path, component }, key) => (
+    <Route exact path={path} component={component} key={key} />
+  ));
   return (
     <Layout>
       <Suspense fallback={<LoadingSpinner />}>
         <ToastContainer position="top-center" />
-        <Switch>
-          <Route exact path="/">
-            <Redirect to="/posts" />
-          </Route>
-          <Route exact path="/posts" component={Home} />
-          <Route exact path="/addpost" component={Addpost} />
-          <Route exact path="/editpost/:id" component={UpdatePost} />
-          <Route path="/postdetail/:id" component={Postdetail} />
-          <Route path="*" component={NotFound} />
-        </Switch>
+        <Switch>{routes}</Switch>
       </Suspense>
     </Layout>
   );
